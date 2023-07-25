@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>TCGHub</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="TCG.css" />
+    <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+    <header>
+        <h1>TCGHub</h1>
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-input" id="search-input" placeholder="Enter card name">
+        <button type="submit" class="search-button" onclick="searchCards()">Search</button>
+    </div>
+
+    <div class="MenuBar">
+
+        <div class="filter-container">
+            <label for="filter-select" class="filter-label">Filter by Rarity:</label>
+            <select id="filter-select" class="filter-select" onchange="filterCards()">
+          <option value="">All</option>
+          <option value="Common">Common</option>
+          <option value="Uncommon">Uncommon</option>
+          <option value="Rare">Rare</option>
+          <option value="Rare Holo">Rare Holo</option>
+          <option value="Rare Holo EX">EX</option>
+          <option value="Rare Holo GX">GX</option>
+          <option value="Rare Holo V">V</option>
+          <option value="Rare Holo VMAX">VMAX</option>
+        </select>
+
+            <div class="type-filter">
+                <label for="type-select" class="type-label">Filter Type:</label>
+                <select id="type-select" onchange="filterTYPECards()">
+              <option value="all">All</option>
+              <option value="Pokemon">Pokemon</option>
+              <option value="Trainer">Trainer</option>
+              <option value="Energy">Energy</option>
+            </select>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="card-list" id="card-list">
+        <!-- Cards will be dynamically added here -->
+    </div>
+
+    <div id="card-container"></div>
+
+    <script src="TCG.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(window).on('load', function() {
+            $("#loader-wrapper").fadeOut(700);
+        });
+    </script>
+
+</body>
+
+</html>

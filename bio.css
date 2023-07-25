@@ -1,0 +1,122 @@
+/* CSS styles for the card bio page */
+
+body {
+    background-color: #121212;
+    /* Set a dark background color */
+    color: #f0f0f0;
+    /* Set text color to a light color */
+    font-family: Verdana, Geneva, sans-serif;
+    /* Set font to Verdana */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(135deg, #c1c1c232, #4d4d4d);
+    /* Set a gradient for the header */
+    color: #f0f0f0;
+    /* Set header text color */
+    text-align: center;
+    padding: 10px;
+    opacity: 0.8;
+    /* Set header opacity to make it somewhat transparent */
+}
+
+#card-bio-container {
+    background-color: #2b2b2b;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 80vh;
+    overflow-y: hidden;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.282);
+    border-radius: 3mm;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.card-image {
+    --card-width: 63mm;
+    /* Set the card width */
+    --card-height: calc(var(--card-width) * 1.4);
+    /* Set the card height based on the aspect ratio of a Pokémon card */
+    width: var(--card-width);
+    height: var(--card-height);
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.282);
+    /* Add a subtle shadow to the card image */
+}
+
+.card-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Set a semi-transparent background for the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.card-image img {
+    object-fit: contain;
+    /* Ensure the entire image fits within the container */
+    width: 100%;
+    /* Set the width to fill the container */
+    height: 100%;
+    /* Set the height to fill the container */
+}
+
+.card-details {
+    --card-info-width: calc(100% - var(--card-width) - 20px);
+    /* Calculate the width for card info */
+    width: var(--card-info-width);
+    padding: 10px;
+    background-color: #2b2b2b;
+    /* Set a semi-transparent background for card info */
+    border-radius: 5px;
+    /* Add a subtle shadow to the card info */
+}
+
+.card-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-details p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+
+/* Add any other custom styles for the card bio page here */
+
+
+/* Footer styles for the card bio page */
+
+footer {
+    background-color: #2b2b2b;
+    /* Set a dark gray background for the footer */
+    color: #f0f0f0;
+    /* Set text color to a light color */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -5px 20px rgba(255, 255, 255, 0.282);
+}
+
+
+/* Add any other custom styles for the footer here */
