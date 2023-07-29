@@ -2,7 +2,7 @@ body {
     background-color: black;
     color: white;
     margin: 0;
-    padding: 0;
+    padding: 20;
 }
 
 @keyframes rotation {
@@ -104,6 +104,22 @@ search-container {
     margin-left: 10px;
 }
 
+.filter-container,
+.type-filter,
+.sort-container {
+    flex: 1;
+    /* Each element will take equal space in the row */
+    padding: 10px;
+    background-color: #4d4d4d7a;
+    border: 1px solid #4d4d4d;
+    border-radius: 5px;
+    margin-right: 10px;
+    height: 30px;
+    /* Adjust the height to make them shorter */
+    padding: 5px 10px;
+    /* Add padding to make them shorter */
+}
+
 .filter-container {
     display: flex;
     align-items: center;
@@ -111,9 +127,10 @@ search-container {
     margin: 20px;
     color: #ffffff;
     background-color: #4d4d4d7a;
-    width: fit-content;
+    width: content;
+    height: 30px;
     padding-left: 20px;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 .type-filter {
@@ -122,17 +139,44 @@ search-container {
     justify-content: center;
     margin: 20px;
     color: #ffffff;
-    background-color: #4d4d4d00;
-    width: fit-content;
-    padding-left: 100px;
+    background-color: #4d4d4d7a;
+    width: content;
+    height: 30px;
+    padding-left: 20px;
+    border-radius: 7px;
 }
 
-h1 {
-    font-family: Verdana;
-    font-size: xx-large;
-    font-weight: bold;
+.sort-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    color: #ffffff;
+    background-color: #4d4d4d7a;
+    width: content;
+    height: 30px;
     padding-left: 20px;
-    padding-top: 20px;
+    border-radius: 7px;
+}
+
+.Nav {
+    font-family: Verdana;
+    font-size: 40px;
+    font-weight: 800;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.Nav:hover {
+    font-family: Verdana;
+    font-size: 40px;
+    font-weight: bolder;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #ca2121;
+    text-decoration: none;
 }
 
 h2 {
@@ -178,6 +222,7 @@ h4 {
     padding: 10px;
     background-color: rgba(51, 51, 51, 0.677);
     border-radius: 18px;
+    box-shadow: 0 5px 8px #ffffff48;
 }
 
 .card img {
@@ -228,8 +273,43 @@ h4 {
     background-color: #4d4d4d00;
 }
 
+.sort-label {
+    font-size: 16px;
+    margin-right: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+
+.sort-select {
+    padding: 10px;
+    font-size: 16px;
+    border-color: #4d4d4d00;
+    border-radius: 4px;
+    background-color: #4d4d4d00;
+}
+
+.MenuBar {
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4d4d4d7a;
+    height: 40px;
+    margin: 20px;
+    padding: 14px;
+    margin-top: -5px;
+}
+
+select {
+    background-color: #4d4d4d00;
+    color: #ffffff;
+    border-color: #4d4d4d00;
+    font-size: 16px;
+}
+
 footer {
-    background-color: #4d4d4d;
+    background-color: #2b2b2b;
     /* Set a dark gray background for the footer */
     color: #f0f0f0;
     /* Set text color to a light color */
@@ -239,17 +319,21 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
+    box-shadow: 0 -5px 20px #ffffff48;
 }
 
-.MenuBar {
-    align-items: flex-start;
-    border-radius: 20px;
-    position: relative;
+.dark-dropdown {
+    color: #000;
 }
 
-select {
-    background-color: #4d4d4d00;
-    color: #ffffff;
-    border-color: #4d4d4d00;
-    font-size: 16px;
+.footTex {
+    color: #f0f0f0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+}
+
+.footTex:hover {
+    color: #ca2121;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
 }

@@ -7,47 +7,52 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="TCG.css" />
-    <link rel="icon" href="Favicon.png">
+    <link rel="icon" href="favicon.png">
 </head>
 
 <body>
     <header>
-        <h1>TCGHub</h1>
+        <h1><a href="https://pokehub-main.github.io/Files/TCG/TCG.html" class="Nav" target="_blank">TCGHUB</a></h1>
     </header>
 
     <div class="search-container">
         <input type="text" class="search-input" id="search-input" placeholder="Enter card name">
-        <button type="submit" class="search-button" onclick="searchCards()">Search</button>
+        <button type="submit" id="search-button" class="search-button" onclick="applyFiltersAndSort()">Search</button>
     </div>
 
     <div class="MenuBar">
 
         <div class="filter-container">
-            <label for="filter-select" class="filter-label">Filter by Rarity:</label>
-            <select id="filter-select" class="filter-select" onchange="filterCards()">
-          <option value="">All</option>
-          <option value="Common">Common</option>
-          <option value="Uncommon">Uncommon</option>
-          <option value="Rare">Rare</option>
-          <option value="Rare Holo">Rare Holo</option>
-          <option value="Rare Holo EX">EX</option>
-          <option value="Rare Holo GX">GX</option>
-          <option value="Rare Holo V">V</option>
-          <option value="Rare Holo VMAX">VMAX</option>
-        </select>
-
-            <div class="type-filter">
-                <label for="type-select" class="type-label">Filter Type:</label>
-                <select id="type-select" onchange="filterTYPECards()">
-              <option value="all">All</option>
-              <option value="Pokemon">Pokemon</option>
-              <option value="Trainer">Trainer</option>
-              <option value="Energy">Energy</option>
+            <label for="filter-select" class="filter-label">Filter Subtype:</label>
+            <select id="filter-select" class="filter-select" onchange="applyFiltersAndSort()">
+                <option value="">All</option>
+                <option value="EX">EX</option>
+                <option value="GX">GX</option>
+                <option value="V">V</option>
+                <option value="VMAX">VMAX</option>
+                <option value="TAG TEAM">TAG TEAM</option>
             </select>
-            </div>
         </div>
 
+        <div class="type-filter">
+            <label for="type-select" class="type-label">Filter Type:</label>
+            <select id="type-select" onchange="applyFiltersAndSort()">
+                <option value="all">All</option>
+                <option value="Pokémon">Pokemon</option>
+                <option value="Trainer">Trainer</option>
+                <option value="Energy">Energy</option>
+            </select>
+        </div>
 
+        <div class="sort-container">
+            <label for="sort-select" class="sort-label">Sort by:</label>
+            <select id="sort-select" onchange="sortCards()">
+                <option value="cardNumberAsc">Card Number (DFLT)</option>
+                <option value="nameAsc">Name (A-Z)</option>
+                <option value="nameDesc">Name (Z-A)</option>
+                <option value="marketPriceDesc">Market Price</option>
+            </select>
+        </div>
 
     </div>
 
@@ -56,6 +61,10 @@
     </div>
 
     <div id="card-container"></div>
+
+    <footer>
+        <p>&copy; 2023 <a id="tcghub-link" href="https://pokehub.free.nf" class="footTex" target="_blank">PokeHub</a>. All Rights Reserved. MIT LICENSE.</p>
+    </footer>
 
     <script src="TCG.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" crossorigin="anonymous"></script>
