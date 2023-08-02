@@ -6,27 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TCGHub - Card Bio</title>
     <link rel="stylesheet" href="bio.css">
+    <link rel="icon" href="Favicon.png">
 </head>
 
 <body>
     <header>
-        <h1>TCGHub</h1>
+        <h1><a href="https://pokehub-main.github.io/Files/TCG/TCG.html" class="Nav" target="_blank">TCGHUB</a></h1>
     </header>
     <div id="card-bio-container">
-        <div class="card-info">
-            <div class="card-image" id="card-image">
-                <!-- Card image will be dynamically added here -->
-                <div class="card-image-overlay">
-                    <h2>Card Image</h2>
-                </div>
+        <div class="card-image" id="card-image">
+            <!-- Card image will be dynamically added here -->
+            <div class="card-image-overlay">
+                <h2>Card Image</h2>
             </div>
-            <div class="card-details" id="card-details">
-                <!-- Card details will be dynamically added here -->
+        </div>
+        <div class="card-info-container">
+            <div class="card-title">
+                <!-- Card title will be dynamically added here -->
+            </div>
+            <div class="card-defined">
+                <div class="card-info-details">
+                    <!-- Card info details will be dynamically added here -->
+                </div>
+                <div class="attack-list">
+                    <!-- Attack list will be dynamically added here -->
+                    <div class="atack-icons">
+                        <div class="energy-icons" id="energy-icons">
+                        </div>
+                    </div>
+                    <h3 class="attack-name">Attack List:</h3>
+                    <ul id="attack-list">
+                        <!-- Individual attacks will be added here -->
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+    <!-- Card Enlarged Overlay -->
+    <div id="card-enlarged-overlay">
+        <div class="enlarged-card-container">
+            <img id="enlarged-card-image" alt="Enlarged Card Image">
+            <button id="close-button">ⓧ</button>
+        </div>
+    </div>
     <footer>
-        <p>&copy; 2023 TCGHub. All rights reserved.</p>
+        <p>&copy; 2023 <a id="tcghub-link" href="https://pokehub.free.nf" class="footTex" target="_blank">PokeHub</a>. All Rights Reserved. MIT LICENSE.</p>
     </footer>
     <script src="bio.js"></script>
 </body>

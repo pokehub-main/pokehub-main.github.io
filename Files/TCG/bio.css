@@ -1,31 +1,43 @@
 /* CSS styles for the card bio page */
 
+:root {
+    --energy-color-colorless: #f2f2f2;
+    --energy-color-grass: #78c850;
+    --energy-color-fire: #f04630;
+    --energy-color-water: #6890f0;
+    --energy-color-lightning: #d5bc57;
+    --energy-color-psychic: #b27ad5;
+    --energy-color-fighting: #512815;
+    --energy-color-darkness: #34302d;
+    --energy-color-metal: #b7b7c7;
+    --energy-color-fairy: #c36479;
+    --energy-color-dragon: #9b6e29;
+}
+
+@font-face {
+    font-family: "Energy";
+    src: url(Fonts/PokemonRegular.ttf);
+}
+
 body {
     background-color: #121212;
-    /* Set a dark background color */
     color: #f0f0f0;
-    /* Set text color to a light color */
     font-family: Verdana, Geneva, sans-serif;
-    /* Set font to Verdana */
     margin: 0;
     padding: 0;
 }
 
 header {
     background: linear-gradient(135deg, #c1c1c232, #4d4d4d);
-    /* Set a gradient for the header */
     color: #f0f0f0;
-    /* Set header text color */
     text-align: center;
     padding: 10px;
     opacity: 0.8;
-    /* Set header opacity to make it somewhat transparent */
 }
 
 #card-bio-container {
     background-color: #2b2b2b;
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     max-height: 80vh;
     overflow-y: hidden;
@@ -34,24 +46,22 @@ header {
     border-radius: 3mm;
 }
 
-.card-info {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-}
-
 .card-image {
-    --card-width: 63mm;
+    --card-width: 68mm;
     /* Set the card width */
     --card-height: calc(var(--card-width) * 1.4);
     /* Set the card height based on the aspect ratio of a Pokémon card */
     width: var(--card-width);
     height: var(--card-height);
+    max-width: 100%;
+    /* Adjust to make sure the image doesn't exceed container width */
+    max-height: 100%;
+    /* Adjust to make sure the image doesn't exceed container height */
     overflow: hidden;
     position: relative;
-    border-radius: 5px;
+    border-radius: 3mm;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.282);
-    /* Add a subtle shadow to the card image */
+    max-height: 80vh;
 }
 
 .card-image-overlay {
@@ -61,8 +71,8 @@ header {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Set a semi-transparent background for the image */
     display: flex;
+    max-height: 80vh;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
@@ -70,45 +80,116 @@ header {
 
 .card-image img {
     object-fit: contain;
-    /* Ensure the entire image fits within the container */
     width: 100%;
-    /* Set the width to fill the container */
     height: 100%;
-    /* Set the height to fill the container */
+    max-height: 80vh;
+    cursor: pointer;
+    /* Add cursor pointer to show it's clickable */
 }
 
-.card-details {
-    --card-info-width: calc(100% - var(--card-width) - 20px);
-    /* Calculate the width for card info */
-    width: var(--card-info-width);
-    padding: 10px;
-    background-color: #2b2b2b;
-    /* Set a semi-transparent background for card info */
-    border-radius: 5px;
-    /* Add a subtle shadow to the card info */
+.card-info-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    flex: 1;
 }
 
-.card-details h2 {
+.card-title {
     font-size: 24px;
-    margin-bottom: 10px;
+    padding-left: 20px;
+    margin: 20px;
+    font-weight: bolder;
 }
 
-.card-details p {
-    font-size: 16px;
-    margin-bottom: 5px;
+.card-defined {
+    display: grid;
+    grid-template-columns: 2.3fr 3fr;
+    gap: 10px;
 }
 
+.card-info-details {
+    background-color: #2b2b2b;
+    border-radius: 5px;
+    margin: 20px;
+    height: fit-content;
+    /* Remove fixed width to allow it to expand based on content */
+}
 
-/* Add any other custom styles for the card bio page here */
+.card-info-details p {
+    font-size: 14px;
+    margin: 10px;
+    padding-left: 20px;
+    font-family: Verdana;
+    font-weight: bold;
+}
+
+.card-info-details h3 {
+    font-size: 22px;
+    margin: 5px;
+    padding-left: 20px;
+    padding-top: 15px;
+    font-family: Verdana;
+    font-weight: bold;
+}
+
+.card-info-details h4 {
+    font-size: 15px;
+    margin: 5px;
+    padding-left: 20px;
+    font-family: Verdana;
+    font-weight: bold;
+}
+
+.attack-list {
+    margin: 10px;
+    background-color: #4d4d4d;
+    border-radius: 5px;
+    font-family: Verdana;
+    overflow-y: auto;
+}
+
+.attack-list h3 {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Verdana;
+    padding-left: 20px;
+}
+
+.attack-list ul {
+    font-size: 19px;
+    font-weight: bold;
+    font-family: Verdana;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.attack-list h4 {
+    font-size: 19px;
+    font-weight: bold;
+    font-family: Verdana;
+}
+
+.attack-list p {
+    font-size: small;
+    font-weight: bold;
+    font-family: Verdana;
+    padding-left: 25px;
+}
+
+.energy-icons {
+    font-family: Energy;
+    font-size: 18px;
+    margin-right: 5px;
+    pointer-events: none;
+}
 
 
 /* Footer styles for the card bio page */
 
 footer {
     background-color: #2b2b2b;
-    /* Set a dark gray background for the footer */
     color: #f0f0f0;
-    /* Set text color to a light color */
     text-align: center;
     padding: 10px;
     position: fixed;
@@ -118,5 +199,80 @@ footer {
     box-shadow: 0 -5px 20px rgba(255, 255, 255, 0.282);
 }
 
+.Nav {
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: bolder;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: white;
+    text-decoration: none;
+}
 
-/* Add any other custom styles for the footer here */
+.Nav:hover {
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: bolder;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #ca2121;
+    text-decoration: none;
+}
+
+.footTex {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.footTex:hover {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ca2121;
+    text-decoration: none;
+}
+
+
+/* Enlarged Overlay Styles */
+
+#card-enlarged-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.enlarged-card-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#enlarged-card-image {
+    max-width: 100%;
+    max-height: 80vh;
+}
+
+#close-button {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    padding-top: 20px;
+    padding-right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    font-weight: 900;
+}
