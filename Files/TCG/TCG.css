@@ -74,6 +74,10 @@ search-container {
     padding: 20px;
 }
 
+.search-container select {
+    color: #000000;
+}
+
 .search-form {
     display: flex;
     align-items: center;
